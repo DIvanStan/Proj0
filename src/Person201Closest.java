@@ -1,6 +1,6 @@
 public class Person201Closest {
     public static void main(String[] args) throws Exception {
-        String file = "data/large.txt";
+        String file = "p0-person201-main/data/large.txt";
 
         double min = Double.MAX_VALUE;
         Person201 a = null;
@@ -8,13 +8,16 @@ public class Person201Closest {
         // TODO: finish this method 
         Person201[] people = Person201Utilities.readFile(file);
         for (Person201 p : people) {
-            double d = a.distanceFrom(p);
+            for (Person201 q : people) {
+                double d = q.distanceFrom(p);
            
             if (d < min && d!= 0) {
                 min = d;
                 b = p;
+                a = q;
             }
         }
+    }
         System.out.printf("closest distance is %3.2f between %s and %s\n",min,a.getName(),b.getName());
     }
 
