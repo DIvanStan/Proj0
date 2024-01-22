@@ -1,6 +1,6 @@
 public class Person201Closest {
     public static void main(String[] args) throws Exception {
-        String file = "p0-person201-main/data/large.txt";
+        String file = "data/large.txt";
 
         double min = Double.MAX_VALUE;
         Person201 a = null;
